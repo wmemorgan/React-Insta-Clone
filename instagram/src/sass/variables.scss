@@ -1,8 +1,11 @@
+// Typography
 /* Roboto & Open Sans */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,900|Roboto:400,500,700');
 
-// Typography
-$logoFont: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+/* Oleo Script */
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script:400,700');
+
+$logoFont: 'Oleo Script', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 $headingFont: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 $defaultFont: 'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 
@@ -16,6 +19,31 @@ $ml: 3rem; // base headline size
 $l: 4rem; // for big emphasis
 $xl: 5rem; // ultra large
 $xxl: 6rem; // site banner headline
+
+//Color Palette
+$primaryColor: #1363A8;
+$primaryDark: #0F5080;
+$primaryBgShading: #F5F8FA;
+$secondaryColor: #4195D2;
+$secondaryBgShading: #7F969F;
+$accent: #ED5D28;
+$emphasis: #03100D;
+$darkText: #595959;
+$lightText: #FFFFFF;
+
+// Color Scheme
+$logoColor: $lightText;
+$headerBgColor: $primaryColor;
+$headerFontColor: $lightText; 
+$footerBgColor: $headerBgColor;
+$footerFontColor: $headerFontColor;
+$headingColor: $darkText;
+$defaultFontColor: $darkText;
+// $defaultButtonColor: .buttonColor($lightText, $secondaryColor);
+// $ctaButtonColor: .buttonColor($lightText, $accent);
+$defaultLinkColor: $secondaryColor;
+$containerBgColor: $primaryBgShading;
+$cardBgColor: $secondaryBgShading;
 
 // Media breakpoints
 $phone: "(max-width: 600px)";
