@@ -1,7 +1,7 @@
 import React from 'react'
 
-// import CommentSection from '../CommentComponents/CommentSection'
-// <CommentSection comments={comments} />
+import CommentSection from '../CommentComponents/CommentSection'
+
 
 const Post = props => {
   console.log(props.post)
@@ -12,7 +12,7 @@ const Post = props => {
       {username}
       <img src={imageUrl} alt="post"/>
       <p>{likes}</p>
-      
+      <CommentSection comments={comments} />
     </div>
   )
 }
