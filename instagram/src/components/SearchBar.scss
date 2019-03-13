@@ -2,7 +2,8 @@
   width: 100%;
   @include flex($justify:space-between,$align:center);
   padding: 20px;
-  background: $lightText;
+  color: $headerFontColor;
+  background: $headerBgColor;
   font-size: $m;
 
   @media #{$phone} {
@@ -25,7 +26,7 @@
 
   .logo-text {
     font-family: $logoFont;
-    border-left: 1px solid black;
+    border-left: 1px solid $headerFontColor;
     padding: 0 20px;
   }
 }
@@ -47,10 +48,6 @@
 .profile {
   @include flex();
   flex-wrap: nowrap;
-
-  // @media #{phone} {
-  //   order: 2;
-  // }
 
   i {
     margin: 0 20px;

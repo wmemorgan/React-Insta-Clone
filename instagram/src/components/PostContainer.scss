@@ -11,7 +11,8 @@
     width: 100%;
     @include flex($align:center);
     padding: 10px;
-    background: white;
+    color: $headerFontColor;
+    background: $headerBgColor;
 
     .avatar-wrapper {
       width: 50px;
@@ -28,11 +29,13 @@
     }
   }
 
-  .like-count-wrapper {
+  .post-footer {
     @include flex();
     padding: 10px;
     font-size: $s;
     font-weight: bold;
+    color: $footerFontColor;
+    background: $footerBgColor;
   }
 
 }
