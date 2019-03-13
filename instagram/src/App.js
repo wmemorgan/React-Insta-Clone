@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
-import dummyData from './dummy-data';
+import React, { Component } from 'react'
+// import SearchBar from './components/SearchBar'
+// import PostContainer from './components/PostContainer'
+
+import dummyData from './dummy-data'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      posts: dummyData
+    }
+  }
   render() {
     return (
       <div className="App">
-        <h2>My React App</h2>
+        {this.state.posts.map(post =>  (
+
+          <div>{post}</div>
+        ))}
+        
       </div>
     );
   }
