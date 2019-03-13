@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import SearchBar from './components/SearchBar'
-import PostContainer from './components/PostComponents/PostContainer'
+import SearchBar from './components/SearchComponents/SearchBar'
+// import PostContainer from './components/PostComponents/PostContainer'
 
 import dummyData from './dummy-data'
 
@@ -14,7 +14,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PostContainer posts={this.state.posts} />
+        <SearchBar />
+        {/* <PostContainer posts={this.state.posts} /> */}
       </div>
     );
   }
