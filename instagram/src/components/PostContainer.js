@@ -1,8 +1,10 @@
 import React from 'react'
 
+import CommentSection from './CommentSection'
+
 const PostContainer = props => {
   console.log(props)
-  const { username, thumbnailUrl, imageUrl, likes } = props.post
+  const { username, thumbnailUrl, imageUrl, likes, comments } = props.post
   return (
     <div className="post-container">
       <header className="post-header">
@@ -24,6 +26,7 @@ const PostContainer = props => {
         <div className="likes-count">
           {likes} likes
         </div>
+        <CommentSection comments={comments}/>
       </footer>
     </div>
   )
