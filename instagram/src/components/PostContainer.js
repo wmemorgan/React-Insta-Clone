@@ -16,9 +16,9 @@ const PostContainer = props => {
       <div className="post-pic-wrapper">
         <img src={imageUrl} alt="post" className="post-pic"/>
       </div>
-      <div className="like-count-wrapper">
+      <footer className="post-footer">
         {likes} likes
-      </div>
+      </footer>
     </div>
   )
 }
