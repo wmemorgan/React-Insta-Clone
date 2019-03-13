@@ -1,33 +1,38 @@
 .post-container {
   width: 90%;
-  margin: 80px 0;
+  margin: 50px 0;
   border: 1px solid lightgray;
-}
 
-.post-header {
-  width: 100%;
-  @include flex($align:center);
-  padding: 10px;
-  background: white;
+  @media #{$phone} {
+    margin: 20px 0;
+  }
 
-  .avatar-wrapper {
-    width: 50px;
-   
-    .avatar {
-      border-radius: 50%;
+  .post-header {
+    width: 100%;
+    @include flex($align:center);
+    padding: 10px;
+    background: white;
+
+    .avatar-wrapper {
+      width: 50px;
+    
+      .avatar {
+        border-radius: 50%;
+      }
+    }
+    
+    .username {
+      margin: 0 5px;
+      font-size: $s;
+      font-weight: bold;
     }
   }
-  
-  .username {
-    margin: 0 5px;
+
+  .like-count-wrapper {
+    @include flex();
+    padding: 10px;
     font-size: $s;
     font-weight: bold;
   }
-}
 
-.like-count-wrapper {
-  @include flex();
-  padding: 10px;
-  font-size: $s;
-  font-weight: bold;
 }
