@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Comment = props => {
-  console.log(props)
+  console.log(`Comment props: `, props.comment)
   return (
-    <comment className="card">
-      {props.comment}
-    </comment>
+    <div className="comment-card">
+      Hello
+    </div>
   )
 }
 
