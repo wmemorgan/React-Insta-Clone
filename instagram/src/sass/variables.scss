@@ -1,0 +1,23 @@
+/* Roboto & Open Sans */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,900|Roboto:400,500,700');
+
+// Typography
+$logoFont: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+$headingFont: Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+$defaultFont: 'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+
+// Font Sizing
+$xxs: 1rem;
+$xs: 1.3rem; // base size for mobile view
+$s: 1.6rem; // base size for text
+$sm: 1.8rem; // base size for menu and button text
+$m: 2rem; // base heading/sub-heading size
+$ml: 3rem; // base headline size
+$l: 4rem; // for big emphasis
+$xl: 5rem; // ultra large
+$xxl: 6rem; // site banner headline
+
+// Media breakpoints
+$phone: "(max-width: 600px)";
+$tablet: "(min-width: 768px)";
+$desktop: "(min-width: 801px)";
