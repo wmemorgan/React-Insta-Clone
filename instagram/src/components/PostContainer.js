@@ -17,7 +17,13 @@ const PostContainer = props => {
         <img src={imageUrl} alt="post" className="post-pic"/>
       </div>
       <footer className="post-footer">
-        {likes} likes
+        <div className="post-footer-icons">
+          <i className="far fa-comment"></i>
+          <i className="far fa-heart"></i>
+        </div>
+        <div className="likes-count">
+          {likes} likes
+        </div>
       </footer>
     </div>
   )

@@ -30,12 +30,26 @@
   }
 
   .post-footer {
-    @include flex();
+    width: 100%;
+    @include flex($direction:column);
     padding: 10px;
     font-size: $s;
     font-weight: bold;
     color: $footerFontColor;
     background: $footerBgColor;
+
+    .post-footer-icons {
+      font-size: $ml;
+      
+
+      i:last-child {
+        margin: 0 10px;
+      }
+    }
+
+    & * {
+      margin: 5px 0;
+    }
   }
 
 }
