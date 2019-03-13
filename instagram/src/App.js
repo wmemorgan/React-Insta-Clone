@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import SearchBar from './components/SearchBar'
-// import PostContainer from './components/PostContainer'
+import PostContainer from './components/PostContainer'
 
 import dummyData from './dummy-data'
 
@@ -15,10 +15,8 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.posts.map(post =>  (
-
-          <div>{post}</div>
+          <PostContainer key={post.timestamp} post={post} />
         ))}
-        
       </div>
     );
   }
