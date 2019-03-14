@@ -14,19 +14,10 @@ class App extends Component {
     }
   }
 
-  // Capture comment form input
-  commentInput = e => {
-    e.preventDefault()
-    console.log(e.target.value)
-    this.setState({
-      inputValue: e.target.value
-    })
-  }
-
   // Add new comment
-  commentSubmit = (username) => {
+  commentSubmit = (username, input) => {
     this.setState(prevState => {
-      // Create new data array with and add the new comment to the comments array
+      // Create new data array and add the new comment to the comments array
       let updatedData = prevState.posts.map(post => {
         if (post.username === username) {
           return {
@@ -36,7 +27,7 @@ class App extends Component {
             likes: post.likes,
             timestamp: moment(Date.now()).format('LLL'),
             comments: [...post.comments,
-              { username: post.username, text: prevState.inputValue }
+              { username: post.username, text: input }
             ]
           }
         } else {
