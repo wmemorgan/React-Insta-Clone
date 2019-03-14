@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchBar from './components/SearchBar'
 import PostContainer from './components/PostContainer'
+import moment from 'moment'
 
 import dummyData from './dummy-data'
 
@@ -28,9 +29,17 @@ class App extends Component {
       let updatedData = prevState.posts.map(post => {
         if (post.username === username) {
           console.log('It matches here are the comments: ', post.comments)
-          post.comments.push({ username: post.username, text: prevState.inputValue})  
-          return post
-          
+          // post.comments.push({ username: post.username, text: prevState.inputValue})  
+          return {
+            username: post.username,
+            thumbNailUrl: post.thumbNailUrl,
+            imageUrl: post.imageUrl,
+            likes: post.likes,
+            timestamp: moment(Date.now()).format('LLL'),
+            comments: [...post.comments,
+              { username: post.username, text: prevState.inputValue }
+            ]
+          }
         } else {
           return post
         }
