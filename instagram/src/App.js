@@ -26,13 +26,12 @@ class App extends Component {
   // Add new comment
   commentSubmit = (username) => {
     this.setState(prevState => {
+      // Create new data array with and add the new comment to the comments array
       let updatedData = prevState.posts.map(post => {
         if (post.username === username) {
-          console.log('It matches here are the comments: ', post.comments)
-          // post.comments.push({ username: post.username, text: prevState.inputValue})  
           return {
             username: post.username,
-            thumbNailUrl: post.thumbNailUrl,
+            thumbnailUrl: post.thumbnailUrl,
             imageUrl: post.imageUrl,
             likes: post.likes,
             timestamp: moment(Date.now()).format('LLL'),
@@ -45,6 +44,7 @@ class App extends Component {
         }
       })
 
+      // Replace the previous data with the new data
       return {
         posts: updatedData,
         inputValue: ''
@@ -62,9 +62,9 @@ class App extends Component {
       <div className="App">
         <SearchBar />
         {/* Pass post data to container component */}
-        {this.state.posts.map(post =>  (
+        {this.state.posts.map((post, index) =>  (
           <PostContainer 
-            key={post.timestamp} 
+            key={index} 
             post={post}
             inputValue={this.state.inputValue}
             commentInput={this.commentInput}
