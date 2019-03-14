@@ -1,3 +1,4 @@
+/* Header and search bar component */
 import React from 'react';
 
 const SearchBar = () => {

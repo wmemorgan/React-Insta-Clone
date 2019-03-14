@@ -11,10 +11,12 @@ class App extends Component {
       posts: dummyData
     }
   }
+  
   render() {
     return (
       <div className="App">
         <SearchBar />
+        {/* Pass post data to container component */}
         {this.state.posts.map(post =>  (
           <PostContainer key={post.timestamp} post={post} />
         ))}
