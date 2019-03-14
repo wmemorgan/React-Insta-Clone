@@ -8,8 +8,18 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      posts: dummyData
+      posts: dummyData,
+      inputValue: ''
     }
+  }
+
+  // Capture comment form input
+  commentInput = e => {
+    e.preventDefault()
+    console.log(e.target.value)
+    this.setState({
+      inputValue: e.target.value
+    })
   }
   
   render() {
@@ -18,7 +28,12 @@ class App extends Component {
         <SearchBar />
         {/* Pass post data to container component */}
         {this.state.posts.map(post =>  (
-          <PostContainer key={post.timestamp} post={post} />
+          <PostContainer 
+            key={post.timestamp} 
+            post={post}
+            inputValue={this.state.inputValue}
+            commentInput={this.commentInput} 
+          />
         ))}
       </div>
     );

@@ -7,7 +7,7 @@ import CommentForm from './CommentForm'
 import ElapsedTime from './ElapsedTime';
 
 const CommentSection = props => {
-  const { comments, timestamp } = props
+  const { comments, timestamp, inputValue, commentInput } = props
   return (
     /* Iterate and pass comment data to
        seperate comment child component */
@@ -17,7 +17,7 @@ const CommentSection = props => {
         <Comment key={index} comment={comment} />
       ))}
       <ElapsedTime timestamp={timestamp}/>
-      <CommentForm />
+      <CommentForm inputValue={inputValue} commentInput={commentInput}/>
     </div>
   )
 }

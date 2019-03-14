@@ -4,9 +4,13 @@ import PropTypes from 'prop-types'
 import Post from './Post'
 
 const PostContainer = props => {
-  const { post } = props
+  const { post, inputValue, commentInput } = props
   return (
-    <Post post={post}/>
+    <Post 
+      post={post}
+      inputValue={inputValue}
+      commentInput={commentInput}
+    />
   )
 }
 
