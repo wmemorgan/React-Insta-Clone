@@ -22,3 +22,11 @@
     font-weight: normal;
   }
 }
+
+.elapsed-time {
+  padding: 10px 0;  
+  color: $defaultFontColor;  
+  font-weight: normal;
+  font-size: $xs;
+  text-transform: uppercase;
+}

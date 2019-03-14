@@ -3,22 +3,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Comment from './Comment'
+import CommentForm from './CommentForm'
+import ElapsedTime from './ElapsedTime';
 
 const CommentSection = props => {
+  const { comments, timestamp } = props
   return (
     /* Iterate and pass comment data to
        seperate comment child component */
     <div className="comment-section">
-      {props.comments.map((comment, index) => (
+      {comments.map((comment, index) => (
 
         <Comment key={index} comment={comment} />
       ))}
-
-      {/* Comment submission form */}
-      <form className="comment-form">
-        <textarea className="comment-input" placeholder="Add comment...">
-        </textarea>
-      </form>
+      <ElapsedTime timestamp={timestamp}/>
+      <CommentForm />
     </div>
   )
 }
