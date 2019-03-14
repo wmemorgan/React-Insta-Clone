@@ -1,9 +1,10 @@
 /* Parse and pass through post comments */
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Comment from './Comment'
 
 const CommentSection = props => {
-  console.log(props)
   return (
     /* Iterate and pass comment data to
        seperate comment child component */
@@ -20,6 +21,10 @@ const CommentSection = props => {
       </form>
     </div>
   )
+}
+
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default CommentSection

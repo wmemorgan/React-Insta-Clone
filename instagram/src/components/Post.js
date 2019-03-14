@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import CommentSection from './CommentSection'
 
 const Post = props => {
@@ -35,6 +35,14 @@ const Post = props => {
       </footer>
     </div>
   )
+}
+
+Post.propTypes = {
+  username: PropTypes.string,
+  thumbnailUrl: PropTypes.string,
+  imageUrl: PropTypes.string,
+  likes: PropTypes.number,
+  comments: PropTypes.array
 }
 
 export default Post

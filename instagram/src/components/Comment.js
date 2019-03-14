@@ -1,8 +1,8 @@
 /* Display individual comment */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Comment = props => {
-  console.log(`Comment props: `, props.comment)
   const { username, text } = props.comment
   return (
     <div className="comment-card">
@@ -14,6 +14,11 @@ const Comment = props => {
       </div>
     </div>
   )
+}
+
+Comment.propType = {
+  username: PropTypes.string,
+  text: PropTypes.string
 }
 
 export default Comment
