@@ -21,6 +21,32 @@ class App extends Component {
       inputValue: e.target.value
     })
   }
+
+  // Add new comment
+  commentSubmit = (username) => {
+    this.setState(prevState => {
+      let updatedData = prevState.posts.map(post => {
+        if (post.username === username) {
+          console.log('It matches here are the comments: ', post.comments)
+          post.comments.push({ username: post.username, text: prevState.inputValue})  
+          return post
+          
+        } else {
+          return post
+        }
+      })
+
+      return {
+        posts: updatedData,
+        inputValue: ''
+      }
+     
+    },
+      () => {
+        console.log(`updated state to:`, this.state)
+      }
+    )
+  }
   
   render() {
     return (
@@ -32,7 +58,8 @@ class App extends Component {
             key={post.timestamp} 
             post={post}
             inputValue={this.state.inputValue}
-            commentInput={this.commentInput} 
+            commentInput={this.commentInput}
+            commentSubmit={this.commentSubmit} 
           />
         ))}
       </div>
