@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CommentSection from './CommentSection'
 
 const Post = props => {
-  const { key, post, inputValue, commentInput, commentSubmit } = props
+  const { key, post } = props
   const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post
   return (
     <div className="post-container">
@@ -37,9 +37,6 @@ const Post = props => {
           username={username} 
           comments={comments} 
           timestamp={timestamp}
-          inputValue={inputValue}
-          commentInput={commentInput}
-          commentSubmit={commentSubmit}
         />
       </footer>
     </div>

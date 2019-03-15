@@ -17,7 +17,6 @@ class CommentSection extends Component {
 
   // Capture comment form input
   commentInput = e => {
-    e.preventDefault()
     console.log(e.target.value)
     this.setState({
       inputValue: e.target.value
@@ -25,13 +24,8 @@ class CommentSection extends Component {
   }
 
   // Add new comment
-  addComment = (username, index) => {
-    console.log(username, index)
-    // Identify post by index number
-    if (this.props.key === index) {
-
-    }
-
+  addNewComment = (e, username) => {
+    e.preventDefault()
     this.setState(prevState => {
       // Create a new comment object
       let newComment = {
@@ -40,7 +34,7 @@ class CommentSection extends Component {
       }
 
       return {
-      // Add the new comment object to the comments array
+        // Add the new comment object to the comments array
         comments: [...prevState.comments, newComment],
         inputValue: ''
       }
@@ -50,11 +44,12 @@ class CommentSection extends Component {
       () => {
         console.log(`updated state to:`, this.state)
       }
-    )
+    )    
+ 
   }
 
   render() {
-    const { key, username, timestamp, inputValue, commentInput, commentSubmit } = this.props
+    const { username, timestamp } = this.props
     return (
       /* Iterate and pass comment data to
          seperate comment child component */
@@ -64,12 +59,10 @@ class CommentSection extends Component {
         ))}
         <ElapsedTime timestamp={timestamp} />
         <CommentForm
-          key={key}
           username={username}
           inputValue={this.state.inputValue}
           commentInput={this.commentInput}
-          commentSubmit={commentSubmit}
-          addComment={this.addComment}
+          addNewComment={this.addNewComment}
         />
       </div>
     )
