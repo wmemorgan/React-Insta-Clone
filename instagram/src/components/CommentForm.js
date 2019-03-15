@@ -8,22 +8,22 @@ class CommentForm extends Component {
   }
 
   // Capture comment form input
-  commentInput = e => {
-    e.preventDefault()
-    this.setState({
-      inputValue: e.target.value
-    })
-  }
+  // commentInput = e => {
+  //   e.preventDefault()
+  //   this.setState({
+  //     inputValue: e.target.value
+  //   })
+  // }
 
   render() {
-    const { username, commentSubmit } = this.props
+    const { key, username, inputValue, commentSubmit, commentInput, addComment } = this.props
     return (
       <>
         <form onSubmit={() => commentSubmit(username, this.state.inputValue)} className="comment-form">
-          <textarea onChange={this.commentInput} value={this.state.inputValue} className="comment-input" placeholder="Add comment...">
+          <textarea onChange={commentInput} value={inputValue} className="comment-input" placeholder="Add comment...">
           </textarea>
         </form>
-        <button onClick={() => commentSubmit(username, this.state.inputValue)} className="btn btn-add" >Add Comment</button>
+        <button onClick={() => addComment(username, key)} className="btn btn-add" >Add Comment</button>
       </>
     )
   }

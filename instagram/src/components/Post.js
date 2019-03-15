@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CommentSection from './CommentSection'
 
 const Post = props => {
-  const { post, inputValue, commentInput, commentSubmit } = props
+  const { key, post, inputValue, commentInput, commentSubmit } = props
   const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post
   return (
     <div className="post-container">
@@ -33,6 +33,7 @@ const Post = props => {
         </div>
         {/* Pass comment data to comment child component */}
         <CommentSection
+          key={key}
           username={username} 
           comments={comments} 
           timestamp={timestamp}

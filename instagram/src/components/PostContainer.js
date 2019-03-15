@@ -6,7 +6,7 @@ import Post from './Post'
 const PostContainer = props => {
   const { post, inputValue, commentInput, commentSubmit } = props
   return (
-    <Post 
+    <Post
       post={post}
       inputValue={inputValue}
       commentInput={commentInput}
