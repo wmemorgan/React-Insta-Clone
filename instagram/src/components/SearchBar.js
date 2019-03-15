@@ -8,7 +8,11 @@ const SearchBar = () => {
         <i className="logo-image fab fa-instagram"></i>
         <div className="logo-text">Instragram</div>
       </div>
-      <input type="search" className="search fas" placeholder="&#xf002; Search"/>
+      <div className="search-wrapper">
+        <i className="fas fa-search"></i>
+        <input type="search" className="search fas" placeholder="Search" />
+      </div>
+      
       <div className="profile">
         <i className="far fa-compass"></i>
         <i className="far fa-heart"></i>

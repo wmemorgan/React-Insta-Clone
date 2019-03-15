@@ -2,7 +2,7 @@
 .post-container {
   width: 90%;
   margin: 50px 0;
-  border: 1px solid lightgray;
+  border: 1px solid $defaultBorderColor;
 
   @media #{$phone} {
     margin: 20px 0;
