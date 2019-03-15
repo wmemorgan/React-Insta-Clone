@@ -9,9 +9,17 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      posts: dummyData,
+      posts: [],
       inputValue: ''
     }
+    console.log(`constructor`)
+  }
+
+  componentDidMount() {
+    console.log(`componentDidMount`)
+    setTimeout(() => {
+      this.setState({ posts: dummyData })
+    },3000)
   }
 
   // Add new comment
@@ -49,19 +57,23 @@ class App extends Component {
   }
   
   render() {
+    console.log('render')
     return (
       <div className="App">
         <SearchBar />
         {/* Pass post data to container component */}
-        {this.state.posts.map((post, index) =>  (
-          <PostContainer 
-            key={index} 
-            post={post}
-            inputValue={this.state.inputValue}
-            commentInput={this.commentInput}
-            commentSubmit={this.commentSubmit} 
-          />
-        ))}
+        {this.state.posts.length > 0 ? (
+          this.state.posts.map((post, index) => (
+            <PostContainer
+              key={index}
+              post={post}
+              inputValue={this.state.inputValue}
+              commentInput={this.commentInput}
+              commentSubmit={this.commentSubmit}
+            />
+            ))
+          ) : (<h2>Loading...</h2>)
+        }
       </div>
     );
   }
