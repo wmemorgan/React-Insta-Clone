@@ -41,10 +41,13 @@
 
     .post-footer-icons {
       font-size: $ml;
-      
 
       i:last-child {
         margin: 0 10px;
+      }
+
+      .fa-heart {
+        cursor: pointer;
       }
     }
 

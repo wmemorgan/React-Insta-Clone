@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import CommentSection from './CommentSection'
 
 const Post = props => {
-  const { key, post } = props
-  const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post
+  const { key, post, likes, addLikes } = props
+  const { username, thumbnailUrl, imageUrl, timestamp, comments } = post
   return (
     <div className="post-container">
       {/* Post Header */}
@@ -26,7 +26,7 @@ const Post = props => {
       <footer className="post-footer">
         <div className="post-footer-icons">
           <i className="far fa-comment"></i>
-          <i className="far fa-heart"></i>
+          <i onClick={addLikes} className="far fa-heart"></i>
         </div>
         <div className="likes-count">
           {likes} likes

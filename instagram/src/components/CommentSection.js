@@ -38,14 +38,9 @@ class CommentSection extends Component {
         comments: [...prevState.comments, newComment],
         inputValue: ''
       }
-
-
     },
-      () => {
-        console.log(`updated state to:`, this.state)
-      }
+      () => {console.log(`updated state to:`, this.state)}
     )    
- 
   }
 
   render() {
