@@ -10,6 +10,8 @@ class CommentSection extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      key: props.key,
+      username: props.username,
       comments: props.comments,
       inputValue: ''
     }
@@ -41,6 +43,26 @@ class CommentSection extends Component {
     },
       () => {console.log(`updated state to:`, this.state)}
     )    
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // Update localStorage when comments are changed
+    if(prevProps.comments !== this.state.comments) {
+      console.log(`componentDidUpdate: comments changed`)
+      let updateLocalStorage = JSON.parse(localStorage.posts).map(post => {
+        const { username, thumbnailUrl, imageUrl, likes, timestamp } = post
+        if(username === this.state.username) {
+          return {
+            username, thumbnailUrl, imageUrl, likes, timestamp,
+            comments: this.state.comments
+          }
+        } else {
+          return post
+        }
+      })
+
+      localStorage.setItem('posts', JSON.stringify(updateLocalStorage))
+    }
   }
 
   render() {

@@ -21,6 +21,26 @@ class PostContainer extends Component {
     }))
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // Update localStorage when like count is updated
+    if (prevProps.likes !== this.state.likes) {
+      console.log(`componentDidUpdate: like count changed`)
+      let updateLocalStorage = JSON.parse(localStorage.posts).map(post => {
+        const { username, thumbnailUrl, imageUrl, timestamp, comments } = post
+        if (username === this.props.post.username) {
+          return {
+            username, thumbnailUrl, imageUrl, timestamp, comments,
+            likes: this.state.likes
+          }
+        } else {
+          return post
+        }
+      })
+
+      localStorage.setItem('posts', JSON.stringify(updateLocalStorage))
+    }
+  }
+
   render() {
     return (
       <Post

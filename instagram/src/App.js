@@ -17,9 +17,29 @@ class App extends Component {
 
   componentDidMount() {
     console.log(`componentDidMount`)
+    //Initialize localStorage
+    let data
+    if (localStorage.posts) {
+      console.log(`localStorage.posts exists`)
+      data = JSON.parse(localStorage.posts)
+    } else {
+      console.log(`creating localStorage.posts`)
+      localStorage.setItem('posts', JSON.stringify(dummyData))
+      data = JSON.parse(localStorage.posts)
+    }
+
+    console.log(`Initial localStorage.posts from parent:`, data)
+
     setTimeout(() => {
-      this.setState({ posts: dummyData })
+      this.setState({ posts: data })
     }, 0)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.posts !== this.state.posts) {
+      localStorage.setItem('posts', JSON.stringify(this.state.posts))
+      console.log(`componentDidUpdate localStorage.posts from parent:`, JSON.parse(localStorage.posts))
+    }
   }
 
   // Search posts by username
