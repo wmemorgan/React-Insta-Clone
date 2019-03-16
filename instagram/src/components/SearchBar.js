@@ -1,7 +1,9 @@
 /* Header and search bar component */
 import React from 'react';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+  const { searchTask, search } = props
+
   return (
     <header className="search-bar-container">
       <div className="logo">
@@ -10,7 +12,13 @@ const SearchBar = () => {
       </div>
       <div className="search-wrapper">
         <i className="fas fa-search"></i>
-        <input type="search" className="search fas" placeholder="Search" />
+        <input 
+          onChange={searchTask} 
+          value={search} 
+          type="search" 
+          className="search fas" 
+          placeholder="Search" 
+        />
       </div>
       
       <div className="profile">
