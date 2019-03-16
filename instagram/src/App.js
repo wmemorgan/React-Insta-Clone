@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    // Synchronize state changes with localStorage
     if(prevState.posts !== this.state.posts) {
       localStorage.setItem('posts', JSON.stringify(this.state.posts))
       console.log(`componentDidUpdate localStorage.posts from parent:`, JSON.parse(localStorage.posts))
@@ -69,27 +70,25 @@ class App extends Component {
     })
   }
 
-render() {
-  console.log('render')
-  return (
-    <div className="App">
-      <SearchBar search={this.state.search} searchTask={this.searchTask}/>
-      {/* Pass post data to container component */}
-      {this.state.posts.length > 0 ? (
-        this.state.posts.map((post, index) => (
-          <PostContainer
-            key={index}
-            post={post}
-            inputValue={this.state.inputValue}
-            commentInput={this.commentInput}
-            commentSubmit={this.commentSubmit}
-          />
-        ))
-      ) : (<h2>Loading...</h2>)
-      }
-    </div>
-  );
-}
+  render() {
+    console.log('App render')
+    return (
+      <div className="App">
+        <SearchBar search={this.state.search} searchTask={this.searchTask}/>
+        {/* Pass post data to container component */}
+        {this.state.posts.length > 0 ? (
+          this.state.posts.map((post, index) => (
+            <PostContainer
+              key={index}
+              id={index}
+              post={post}
+            />
+          ))
+        ) : (<h2>Loading...</h2>)
+        }
+      </div>
+    );
+  }
 }
 
 export default App;

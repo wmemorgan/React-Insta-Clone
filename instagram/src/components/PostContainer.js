@@ -39,11 +39,17 @@ class PostContainer extends Component {
 
       localStorage.setItem('posts', JSON.stringify(updateLocalStorage))
     }
+
+    if (prevProps.post !== this.props.post) {
+      console.log(`post in PostContainer has changed`)
+    }
   }
 
   render() {
+    console.log(`PostContainer render`)
     return (
       <Post
+        id={this.props.id}
         post={this.props.post}
         likes={this.state.likes}
         addLikes={this.addLikes}

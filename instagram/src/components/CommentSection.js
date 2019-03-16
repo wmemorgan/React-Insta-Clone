@@ -10,7 +10,7 @@ class CommentSection extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      key: props.key,
+      id: props.id,
       username: props.username,
       comments: props.comments,
       inputValue: ''
@@ -45,9 +45,20 @@ class CommentSection extends Component {
     )    
   }
 
+  deleteComment = (id) => {
+    this.setState(prevState => {
+      return {
+        comments: [...prevState.comments.filter((comment, index) => index !== id)]
+      }
+    },
+      () => { console.log(`deleteComment updated state to:`, this.state) }
+    )
+  }
+
+
   componentDidUpdate(prevProps, prevState) {
     // Update localStorage when comments are changed
-    if(prevProps.comments !== this.state.comments) {
+    if (prevProps.comments !== this.state.comments) {
       console.log(`componentDidUpdate: comments changed`)
       let updateLocalStorage = JSON.parse(localStorage.posts).map(post => {
         const { username, thumbnailUrl, imageUrl, likes, timestamp } = post
@@ -60,23 +71,23 @@ class CommentSection extends Component {
           return post
         }
       })
-
       localStorage.setItem('posts', JSON.stringify(updateLocalStorage))
     }
   }
 
   render() {
-    const { username, timestamp } = this.props
+    const { timestamp } = this.props
+    console.log(`CommentSection render`)
     return (
       /* Iterate and pass comment data to
          seperate comment child component */
       <div className="comment-section">
         {this.state.comments.map((comment, index) => (
-          <Comment key={index} comment={comment} />
+          <Comment key={index} id={index} username={this.state.username} comment={comment} deleteComment={this.deleteComment}/>
         ))}
         <ElapsedTime timestamp={timestamp} />
         <CommentForm
-          username={username}
+          username={this.state.username}
           inputValue={this.state.inputValue}
           commentInput={this.commentInput}
           addNewComment={this.addNewComment}

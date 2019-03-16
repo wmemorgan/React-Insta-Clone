@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import CommentSection from './CommentSection'
 
 const Post = props => {
-  const { key, post, likes, addLikes } = props
+  const { id, post, likes, addLikes } = props
   const { username, thumbnailUrl, imageUrl, timestamp, comments, filtered } = post
   const postClassGroup = classNames({
     "post-container": true,
@@ -38,7 +38,7 @@ const Post = props => {
         </div>
         {/* Pass comment data to comment child component */}
         <CommentSection
-          key={key}
+          id={id}
           username={username} 
           comments={comments} 
           timestamp={timestamp}
