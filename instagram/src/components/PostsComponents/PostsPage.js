@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import SearchBar from '../SearchBarComponents/SearchBar'
+
 class PostsPage extends Component {
   constructor(props) {
     super(props)

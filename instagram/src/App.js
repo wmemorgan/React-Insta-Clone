@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SearchBar from './components/SearchBar'
+import SearchBar from './components/SearchBarComponents/SearchBar'
 import PostContainer from './components/PostContainer'
 // import moment from 'moment'
 
