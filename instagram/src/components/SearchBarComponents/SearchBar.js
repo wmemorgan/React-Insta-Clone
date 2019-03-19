@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     <header className="search-bar-container">
       <div className="logo">
         <i className="logo-image fab fa-instagram"></i>
-        <div className="logo-text">Instraclone</div>
+        <div className="logo-text">Instaclone</div>
       </div>
       <div className="search-wrapper">
         <i className="fas fa-search"></i>
