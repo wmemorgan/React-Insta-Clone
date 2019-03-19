@@ -42,7 +42,7 @@ class Login extends Component {
     console.log(`Login render localStorage: `, JSON.parse(localStorage.getItem('username')))
     return (
       <div className="login-container">
-        <h2 className="logo-text">Instragram</h2>
+        <h2 className="logo-text">Instraclone</h2>
         <form onSubmit={this.login} className="login-form">
           <input
             type="text"
