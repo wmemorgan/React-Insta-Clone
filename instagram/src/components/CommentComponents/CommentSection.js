@@ -31,7 +31,7 @@ class CommentSection extends Component {
     this.setState(prevState => {
       // Create a new comment object
       let newComment = {
-        username,
+        username: JSON.parse(localStorage.getItem('username')).username,
         text: prevState.inputValue
       }
 
