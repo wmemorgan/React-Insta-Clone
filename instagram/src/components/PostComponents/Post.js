@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import CommentSection from './CommentSection'
+import CommentSection from '../CommentSection'
 
 const Post = props => {
   const { id, post, likes, addLikes } = props

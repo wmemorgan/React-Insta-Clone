@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import SearchBar from '../SearchBarComponents/SearchBar'
+import PostContainer from './PostContainer'
 
 class PostsPage extends Component {
   constructor(props) {
