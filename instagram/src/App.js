@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // High Order Component to manage initial page display
 import withAuthenticate from './components/Authentication/withAuthenticate'
+import Login from './components/Login/Login'
 import PostsPage from './components/PostComponents/PostsPage'
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
     console.log('App render')
     return (
       <div className="App">
-        <ComponentFromWithAuthenticate />
+        {/* <ComponentFromWithAuthenticate /> */}
+        <Login />
       </div>
     );
   }
