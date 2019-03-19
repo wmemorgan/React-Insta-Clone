@@ -17,7 +17,7 @@ class CommentSection extends Component {
     }
   }
 
-  // Capture comment form input
+  // Capture comment from input field
   commentInput = e => {
     console.log(e.target.value)
     this.setState({
