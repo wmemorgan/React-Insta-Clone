@@ -43,15 +43,17 @@ class Login extends Component {
     return (
       <div className="login-container">
         <h2 className="logo-text">Instragram</h2>
-        <input 
-          type="text" 
-          name="username" 
-          value={this.state.username} 
-          placeholder="Username"
-          onChange={this.usernameInput}
-        />
-        <input type="password" name="password" placeholder="Password"/>
-        <button onClick={this.login} className="btn btn-login">Login</button>
+        <form onSubmit={this.login} className="login-form">
+          <input
+            type="text"
+            name="username"
+            value={this.state.username}
+            placeholder="Username"
+            onChange={this.usernameInput}
+          />
+          <input type="password" name="password" placeholder="Password" />
+          <button type="submit" className="btn btn-login">Login</button>
+        </form>
       </div>
     )
   }
