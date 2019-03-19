@@ -8,12 +8,12 @@ class App extends Component {
 
   render() {
     //Instantiate HOC
-    const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
+    const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login)
     console.log('App render')
     return (
       <div className="App">
-        {/* <ComponentFromWithAuthenticate /> */}
-        <Login />
+        <ComponentFromWithAuthenticate />
+        {/* <Login /> */}
       </div>
     );
   }
