@@ -12,9 +12,10 @@ class Login extends Component {
   render() {
     return (
       <div className="login-container">
+        <h2 className="logo-text">Instragram</h2>
         <input type="text" name="username" value={this.state.username} placeholder="Username"/>
         <input type="password" name="password" placeholder="Password"/>
-        <button>Login</button>
+        <button className="btn btn-login">Login</button>
       </div>
     )
   }
