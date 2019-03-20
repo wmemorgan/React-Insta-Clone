@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 // High Order Component to manage initial page display
-import withAuthenticate from './components/Authentication/withAuthenticate'
-import Login from './components/Login/Login'
-import PostsPage from './components/PostComponents/PostsPage'
+import withAuthenticate from '../Authentication/withAuthenticate'
+import Login from '../Login/Login'
+import PostsPage from '../PostComponents/PostsPage'
+
+import AppContainer from './AppContainer'
 
 class App extends Component {
 
@@ -11,10 +13,12 @@ class App extends Component {
     const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login)
     console.log('App render')
     return (
-      <div className="App">
-        <ComponentFromWithAuthenticate />
-        {/* <Login /> */}
-      </div>
+      <>
+        <AppContainer>
+          <ComponentFromWithAuthenticate />
+        </AppContainer>
+        
+      </>
     );
   }
 }

@@ -2,5 +2,6 @@
   max-width: 1000px;
   @include flex($direction:column,$align:center);
   margin: 0 auto;
+  background: goldenrod;
 }
 
