@@ -47,6 +47,12 @@ const theme = {
   ],
   // for media queries -- express them as @media ${theme.breakpoints[0]} {styles here}
   // in the arr, the first is for mobile, second is for portrait tablet, third is for desktop
+  flex: (direction='row',align='normal',justify='normal') => `{
+    display: flex;
+    flex-direction: ${direction};
+    justify-content: ${justify};
+    align-items: ${align};
+  }`
 
 }
 
