@@ -58,4 +58,4 @@ const theme = {
 
 export default theme
 
-export const { color, colorScheme, fontStyles, fontSizing, breakpoints } = theme
+export const { color, colorScheme, fontStyles, fontSizing, breakpoints, flex } = theme
