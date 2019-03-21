@@ -23,7 +23,7 @@ const theme = {
   },
 
   fontStyles: {
-    logoFont: "'Dancing Script', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif",
+    logoFont: "'Oleo Script', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif",
     headingFont: "Roboto, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif",
     defaultFont: "'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif"
   },
