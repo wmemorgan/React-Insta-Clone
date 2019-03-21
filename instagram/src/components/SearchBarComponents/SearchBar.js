@@ -2,17 +2,17 @@
 import React from 'react';
 
 // Styled components
-import { SearchBarContainer } from './SearchBarStyle'
+import { SearchBarContainer, LogoHeader } from './SearchBarStyle'
 
 const SearchBar = (props) => {
   const { searchTask, search } = props
 
   return (
     <SearchBarContainer>
-      <div className="logo">
+      <LogoHeader>
         <i className="logo-image fab fa-instagram"></i>
         <div className="logo-text">Instaclone</div>
-      </div>
+      </LogoHeader>
       <div className="search-wrapper">
         <i className="fas fa-search"></i>
         <input 
