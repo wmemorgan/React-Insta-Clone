@@ -8,7 +8,8 @@ const theme = {
     accent: '#ED5D28',
     emphasis: '#03100D',
     darkText: '#595959',
-    lightText: '#FFFFFF'
+    lightText: '#FFFFFF',
+    danger: 'red'
   },
 
   colorScheme: {
