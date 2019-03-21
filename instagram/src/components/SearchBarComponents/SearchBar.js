@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Styled components
-import { SearchBarContainer, LogoHeader } from './SearchBarStyle'
+import { SearchBarContainer, LogoHeader, SearchFieldContainer } from './SearchBarStyle'
 
 const SearchBar = (props) => {
   const { searchTask, search } = props
@@ -13,7 +13,7 @@ const SearchBar = (props) => {
         <i className="logo-image fab fa-instagram"></i>
         <div className="logo-text">Instaclone</div>
       </LogoHeader>
-      <div className="search-wrapper">
+      <SearchFieldContainer>
         <i className="fas fa-search"></i>
         <input 
           onChange={searchTask} 
@@ -22,7 +22,7 @@ const SearchBar = (props) => {
           className="search fas" 
           placeholder="Search" 
         />
-      </div>
+      </SearchFieldContainer>
       
       <div className="profile">
         <i className="far fa-compass"></i>
