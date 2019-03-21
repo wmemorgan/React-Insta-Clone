@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { color, colorScheme, fontStyles, fontSizing, breakpoints, flex } from './theme'
+import { color, fontStyles, fontSizing } from './theme'
 
 const GlobalStyle = createGlobalStyle `
 ${normalize}
@@ -21,7 +21,6 @@ body * {
 
 body {
   background: ${color.primaryBgShading};
-  ${flex('column', 'center')};
 }
 
 h1, h2, h3, h4, h5 {

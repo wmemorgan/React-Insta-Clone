@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components'
-import GlobalStyle from './components/Shared/GlobalStyle'
-import theme from './components/Shared/theme'
+import GlobalStyle from './components/StyleComponents/GlobalStyle'
+import theme from './components/StyleComponents/theme'
 import './index.scss';
 import App from './components/App/App';
 
