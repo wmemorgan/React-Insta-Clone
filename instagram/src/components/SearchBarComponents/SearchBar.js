@@ -1,11 +1,14 @@
 /* Header and search bar component */
 import React from 'react';
 
+// Styled components
+import { SearchBarContainer } from './SearchBarStyle'
+
 const SearchBar = (props) => {
   const { searchTask, search } = props
 
   return (
-    <header className="search-bar-container">
+    <SearchBarContainer>
       <div className="logo">
         <i className="logo-image fab fa-instagram"></i>
         <div className="logo-text">Instaclone</div>
@@ -26,7 +29,7 @@ const SearchBar = (props) => {
         <i className="far fa-heart"></i>
         <i className="far fa-user"></i>
       </div>
-    </header>
+  </SearchBarContainer>
   )
 }
 
