@@ -41,14 +41,14 @@ class PostList extends Component {
     }
 
     if (prevProps.post !== this.props.post) {
-      console.log(`post in PostContainer has changed`)
+      console.log(`post in PostList has changed`)
     }
   }
 
   render() {
-    console.log(`PostContainer render`)
+    console.log(`PostList render`)
     return (
-      <Post className="post"
+      <Post
         id={this.props.id}
         post={this.props.post}
         likes={this.state.likes}

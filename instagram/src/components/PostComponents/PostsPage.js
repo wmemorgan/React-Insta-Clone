@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PostsPageContainer from './PostsPageContainer'
 import SearchBar from '../SearchBarComponents/SearchBar'
-import PostContainer from './PostContainer'
+import PostList from './PostList'
 
 import dummyData from '../../dummy-data'
 
@@ -78,7 +78,7 @@ class PostsPage extends Component {
         {/* Pass post data to container component */}
         {this.state.posts.length > 0 ? (
           this.state.posts.map((post, index) => (
-            <PostContainer
+            <PostList
               key={index}
               id={index}
               post={post}
