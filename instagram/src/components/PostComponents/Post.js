@@ -4,6 +4,7 @@ import classNames from 'classnames'
 
 // Styled Components
 import { PostContainer, PostHeader } from './PostStyleComponents'
+import Username from '../StyleComponents/Username'
 
 import CommentSection from '../CommentComponents/CommentSection'
 
@@ -18,11 +19,11 @@ const Post = props => {
       {/* Post Header */}
       <PostHeader>
         <div className="avatar-wrapper">
-          <img src={thumbnailUrl} alt="user avatar" className="avatar" />
+          <img src={thumbnailUrl} alt="user thumbnail" className="avatar" />
         </div>
-        <div className="username">
+        <Username>
           {username}
-        </div>
+        </Username>
       </PostHeader>
 
       {/* Main Content */}
