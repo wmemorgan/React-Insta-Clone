@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colorScheme, fontSizing, breakpoints, flex } from '../StyleComponents/theme'
 
 export const PostContainer = styled.div`
@@ -10,9 +10,11 @@ export const PostContainer = styled.div`
     margin: 20px 0;
   }
 
-  .filtered {
-    display: none;
-  }
+  ${props =>
+    props.className === 'filtered' &&
+    css`
+      display: none;
+  `}
 `
 
 export const PostHeader = styled.header`
