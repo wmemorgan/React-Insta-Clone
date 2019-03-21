@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import LoginContainer from './LoginContainer'
+import Logo from '../StyleComponents/Logo'
+import Form from '../StyleComponents/Form'
+import Button from '../StyleComponents/Button'
 
 class Login extends Component {
   constructor(props) {
@@ -41,9 +45,9 @@ class Login extends Component {
     console.log(`Login render this.state`, this.state)
     console.log(`Login render localStorage: `, JSON.parse(localStorage.getItem('username')))
     return (
-      <div className="login-container">
-        <h2 className="logo-text">Instaclone</h2>
-        <form onSubmit={this.login} className="login-form">
+      <LoginContainer>
+        <Logo>Instaclone</Logo>
+        <Form onSubmit={this.login} login>
           <input
             type="text"
             name="username"
@@ -52,9 +56,9 @@ class Login extends Component {
             onChange={this.usernameInput}
           />
           <input type="password" name="password" placeholder="Password" />
-          <button type="submit" className="btn btn-login">Login</button>
-        </form>
-      </div>
+          <Button type="submit" primary>Login</Button>
+        </Form>
+      </LoginContainer>
     )
   }
 }
