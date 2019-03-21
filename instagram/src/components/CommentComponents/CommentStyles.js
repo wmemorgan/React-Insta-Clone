@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints, flex } from '../StyleComponents/theme'
+import { colorScheme, fontSizing, breakpoints, flex } from '../StyleComponents/theme'
 
 export const CommentCard = styled.div`
   width: 90%;
@@ -26,4 +26,12 @@ export const CommentDeleteContainer = styled.div`
   .fa-ellipsis-v {
     margin: 5px;
   }
+`
+
+export const ElapsedTimeContainer = styled.div`
+  padding: 10px 0;  
+  color: ${colorScheme.defaultFontColor};  
+  font-weight: normal;
+  font-size: ${fontSizing.xs};
+  text-transform: uppercase;
 `
