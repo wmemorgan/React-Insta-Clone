@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 // Styled Components
-import { PostContainer, PostHeader } from './PostStyleComponents'
+import { PostContainer, PostHeader, UserThumbnail, PostPictureContainer, PostPicture, PostFooter, FooterIcons } from './PostStyleComponents'
 import Username from '../StyleComponents/Username'
 
 import CommentSection from '../CommentComponents/CommentSection'
@@ -18,28 +18,27 @@ const Post = props => {
     <PostContainer className={postClassGroup}>
       {/* Post Header */}
       <PostHeader>
-        <div className="avatar-wrapper">
-          <img src={thumbnailUrl} alt="user thumbnail" className="avatar" />
-        </div>
-        <Username>
+        <UserThumbnail>
+          <img src={thumbnailUrl} alt="user thumbnail"/>
+        </UserThumbnail>
+    
+        <Username primary>
           {username}
         </Username>
       </PostHeader>
 
       {/* Main Content */}
-      <div className="post-pic-wrapper">
-        <img src={imageUrl} alt="post" className="post-pic"/>
-      </div>
+      <PostPictureContainer>
+        <PostPicture src={imageUrl} alt="post" />
+      </PostPictureContainer>
 
       {/* Post Footer */}
-      <footer className="post-footer">
-        <div className="post-footer-icons">
+      <PostFooter>
+        <FooterIcons>
           <i className="far fa-comment"></i>
           <i onClick={addLikes} className="far fa-heart"></i>
-        </div>
-        <div className="likes-count">
-          {likes} likes
-        </div>
+        </FooterIcons>
+        {likes} likes
         {/* Pass comment data to comment child component */}
         <CommentSection
           id={id}
@@ -47,7 +46,7 @@ const Post = props => {
           comments={comments} 
           timestamp={timestamp}
         />
-      </footer>
+      </PostFooter>
     </PostContainer>
   )
 }

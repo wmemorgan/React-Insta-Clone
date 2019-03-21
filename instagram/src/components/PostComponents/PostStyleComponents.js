@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colorScheme, breakpoints, flex } from '../StyleComponents/theme'
+import { colorScheme, fontSizing, breakpoints, flex } from '../StyleComponents/theme'
 
 export const PostContainer = styled.div`
   width: 90%;
@@ -24,7 +24,13 @@ export const PostHeader = styled.header`
 `
 
 export const UserThumbnail = styled.div`
+    width: 50px;
+
+    img {
+      border-radius: 50%;
+    }
 `
+
 
 // See shared component for Username
 
@@ -35,4 +41,27 @@ export const PostPicture = styled.img`
 `
 
 export const PostFooter = styled.footer`
+    width: 100%;
+    ${flex('column')};
+    padding: 10px;
+    font-size: ${fontSizing.s};
+    font-weight: bold;
+    color: ${colorScheme.footerFontColor};
+    background: ${colorScheme.footerBgColor};
+
+    & * {
+      margin: 5px 0;
+    }
+`
+
+export const FooterIcons = styled.div`
+      font-size: $ml;
+
+      i:last-child {
+        margin: 0 10px;
+      }
+
+      .fa-heart {
+        cursor: pointer;
+      }
 `
