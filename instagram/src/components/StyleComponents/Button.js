@@ -8,6 +8,17 @@ const Button = styled.button`
     text-transform: uppercase;
     cursor: pointer;
     color: ${color.lightText};
+
+    /* Primary settings */
+    ${props =>
+    props.primary &&
+    css`
+        padding: 5px;
+        font-size: ${fontSizing.s};
+        background: ${color.primaryColor};
+    `}
+
+    /* Alert settings */
     ${props => 
       props.alert &&
       css`
@@ -15,6 +26,8 @@ const Button = styled.button`
         font-size: ${fontSizing.xxs};
         background: ${color.danger};
     `}
+
+
 `
 
 export default Button
