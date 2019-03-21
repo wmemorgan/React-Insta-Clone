@@ -11,6 +11,7 @@ const Button = styled.button`
     ${props => 
       props.alert &&
       css`
+        padding: 5px;
         font-size: ${fontSizing.xxs};
         background: ${color.danger};
     `}
