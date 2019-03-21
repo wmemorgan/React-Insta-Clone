@@ -26,7 +26,7 @@ class CommentSection extends Component {
   }
 
   // Add new comment
-  addNewComment = (e, username) => {
+  addNewComment = (e) => {
     e.preventDefault()
     this.setState(prevState => {
       // Create a new comment object
