@@ -2,6 +2,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+// Import styled componnents
+import { CommentCard, CommentContent, 
+  CommentText, CommentDeleteContainer} from './CommentStyles'
+import Username from '../StyleComponents/Username'
+import Button from '../StyleComponents/Button'
+
 class Comment extends Component {
   constructor(props) {
     super(props)
@@ -23,24 +29,21 @@ class Comment extends Component {
     const { username, text } = comment
  
     return (
-      <div className="comment-card">
-        <div className="comment-content-wrapper">
-          <div className="comment-username">
-            {username}
-          </div>
-          <div className="comment-text">
-            {text}
-          </div>
-        </div>
-        <div className="comment-delete-wrapper">
+      <CommentCard>
+        <CommentContent>
+          <Username>{username}</Username>
+          <CommentText>{text}</CommentText>
+        </CommentContent>
+        
+        <CommentDeleteContainer>
           {/* Toggle delete button when pressed */}
           <i onClick={this.toggleDeleteBtn} className="fas fa-ellipsis-v"></i>
           {
             this.state.isHidden ? '' :
-              <button onClick={() => deleteComment(id)} className="btn-delete">Delete Comment</button>
+              <Button onClick={() => deleteComment(id)} alert>Delete Comment</Button>
           }
-        </div>
-      </div>
+        </CommentDeleteContainer>
+      </CommentCard>
     )
   }
 }
