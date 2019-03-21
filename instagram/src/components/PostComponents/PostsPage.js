@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PostsPageContainer from './PostsPageContainer'
 import SearchBar from '../SearchBarComponents/SearchBar'
 import PostContainer from './PostContainer'
 
@@ -72,7 +73,7 @@ class PostsPage extends Component {
   render() {
     console.log('App render')
     return (
-      <div className="App">
+      <PostsPageContainer>
         <SearchBar search={this.state.search} searchTask={this.searchTask} />
         {/* Pass post data to container component */}
         {this.state.posts.length > 0 ? (
@@ -85,7 +86,7 @@ class PostsPage extends Component {
           ))
         ) : (<h2>Loading...</h2>)
         }
-      </div>
+      </PostsPageContainer>
     );
   }  
 
