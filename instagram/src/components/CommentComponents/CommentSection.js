@@ -81,9 +81,15 @@ class CommentSection extends Component {
     return (
       /* Iterate and pass comment data to
          seperate comment child component */
-      <div className="comment-section">
+      <>
         {this.state.comments.map((comment, index) => (
-          <Comment key={index} id={index} username={this.state.username} comment={comment} deleteComment={this.deleteComment}/>
+          <Comment 
+            key={index} 
+            id={index} 
+            username={this.state.username} 
+            comment={comment} 
+            deleteComment={this.deleteComment}
+          />
         ))}
         <ElapsedTime timestamp={timestamp} />
         <CommentForm
@@ -92,7 +98,7 @@ class CommentSection extends Component {
           commentInput={this.commentInput}
           addNewComment={this.addNewComment}
         />
-      </div>
+      </>
     )
   }
 }
