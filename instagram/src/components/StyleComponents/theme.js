@@ -12,9 +12,9 @@ const theme = {
   },
 
   colorScheme: {
-    logoColor: () => { return theme.color.lightText },
-    headerBgColor: () => { return theme.color.primaryColor },
-    headerFontColor: () => { return theme.color.lightText },
+    logoColor: () => { return theme.color.emphasis },
+    headerBgColor: () => { return theme.color.lightText },
+    headerFontColor: () => { return theme.color.emphasis },
     footerBgColor: () => { return theme.color.headerBgColor },
     footerFontColor: () => { return theme.color.headerFontColor },
     headingColor: () => { return theme.color.darkText },
