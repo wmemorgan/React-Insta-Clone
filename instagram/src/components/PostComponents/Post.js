@@ -5,6 +5,7 @@ import classNames from 'classnames'
 // Styled Components
 import { PostContainer, PostHeader, UserThumbnail, PostPictureContainer, PostPicture, PostFooter, FooterIcons } from './PostStyleComponents'
 import Username from '../StyleComponents/Username'
+import Likes from '../StyleComponents/Likes'
 
 import CommentSection from '../CommentComponents/CommentSection'
 
@@ -38,7 +39,12 @@ const Post = props => {
           <i className="far fa-comment"></i>
           <i onClick={addLikes} className="far fa-heart"></i>
         </FooterIcons>
-        {likes} likes
+        
+        {/* Number of Likes */}
+        <Likes>
+          {likes} likes
+        </Likes>
+      
         {/* Pass comment data to comment child component */}
         <CommentSection
           id={id}
