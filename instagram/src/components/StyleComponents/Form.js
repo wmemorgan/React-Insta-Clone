@@ -15,7 +15,7 @@ const Form = styled.form`
   ${props => 
     props.login &&
     css`
-    ${props.theme.flex('column','center')};
+    ${props.theme.flex('column','center','center')};
     border: none;
 
     & * {
@@ -31,8 +31,6 @@ const Form = styled.form`
     }
   `
 }
-
-
 `
 
 export default Form
