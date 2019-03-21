@@ -19,7 +19,10 @@ const theme = {
     footerFontColor: () => { return theme.color.headerFontColor },
     headingColor: () => { return theme.color.darkText },
     defaultFontColor: () => { return theme.color.darkText },
-    defaultLinkColor: () => { return theme.color.secondaryColor }
+    defaultLinkColor: () => { return theme.color.secondaryColor },
+    containerBgColor: () => { return theme.primaryBgShading },
+    cardBgColor: () => { return theme.secondaryBgShading },
+    defaultBorderColor: 'lightgray'
   },
 
   fontStyles: {
