@@ -1,26 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+
+// Styled Components
+import { PostContainer, PostHeader } from './PostStyleComponents'
+
 import CommentSection from '../CommentComponents/CommentSection'
 
 const Post = props => {
   const { id, post, likes, addLikes } = props
   const { username, thumbnailUrl, imageUrl, timestamp, comments, filtered } = post
   const postClassGroup = classNames({
-    "post-container": true,
     filtered: filtered
   });
   return (
-    <div className={postClassGroup}>
+    <PostContainer className={postClassGroup}>
       {/* Post Header */}
-      <header className="post-header">
+      <PostHeader>
         <div className="avatar-wrapper">
           <img src={thumbnailUrl} alt="user avatar" className="avatar" />
         </div>
         <div className="username">
           {username}
         </div>
-      </header>
+      </PostHeader>
 
       {/* Main Content */}
       <div className="post-pic-wrapper">
@@ -44,7 +47,7 @@ const Post = props => {
           timestamp={timestamp}
         />
       </footer>
-    </div>
+    </PostContainer>
   )
 }
 
