@@ -46,7 +46,6 @@ class PostsPage extends Component {
   // Search posts by username
   searchTask = e => {
     let searchString = e.target.value.toLowerCase()
-    console.log(`e.target.value: `, searchString)
     this.setState(prevState => {
       let filteredPosts = prevState.posts.map(post => {
         const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post

@@ -39,10 +39,6 @@ class PostList extends Component {
 
       localStorage.setItem('posts', JSON.stringify(updateLocalStorage))
     }
-
-    if (prevProps.post !== this.props.post) {
-      console.log(`post in PostList has changed`)
-    }
   }
 
   render() {
