@@ -17,7 +17,7 @@ class CommentSection extends Component {
     }
   }
 
-  // Capture comment form input
+  // Capture comment from input field
   commentInput = e => {
     console.log(e.target.value)
     this.setState({
@@ -26,12 +26,12 @@ class CommentSection extends Component {
   }
 
   // Add new comment
-  addNewComment = (e, username) => {
+  addNewComment = (e) => {
     e.preventDefault()
     this.setState(prevState => {
       // Create a new comment object
       let newComment = {
-        username,
+        username: JSON.parse(localStorage.getItem('username')).username,
         text: prevState.inputValue
       }
 

@@ -11,6 +11,7 @@
 
 // Components
 @import './App.scss';
-@import './components/SearchBar.scss';
-@import './components/PostComponents.scss';
-@import './components/CommentComponents.scss';
+@import './components/SearchBarComponents/SearchBar.scss';
+@import './components/PostComponents/PostComponents.scss';
+@import './components/CommentComponents/CommentComponents.scss';
+@import './components/Login/Login.scss';
