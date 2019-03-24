@@ -1,8 +1,12 @@
 /* Post component */
+.filtered {
+  display: none;
+}
+
 .post-container {
   width: 90%;
   margin: 50px 0;
-  border: 1px solid lightgray;
+  border: 1px solid $defaultBorderColor;
 
   @media #{$phone} {
     margin: 20px 0;
@@ -41,10 +45,13 @@
 
     .post-footer-icons {
       font-size: $ml;
-      
 
       i:last-child {
         margin: 0 10px;
+      }
+
+      .fa-heart {
+        cursor: pointer;
       }
     }
 

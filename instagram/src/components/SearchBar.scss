@@ -31,17 +31,27 @@
   }
 }
 
-.search {
+.search-wrapper {
+  @include flex($justify:center,$align:center);
   padding: 5px 10px;
+  border: 0.5px solid $defaultBorderColor;
+  color: $defaultFontColor;
   background: $primaryBgShading;
-  font-family: FontAwesome, 'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
   font-size: $xs;
-  text-align: center;
-  word-spacing: 1rem;
 
   @media #{$phone} {
     order: 1;
   }  
+
+  .search {
+    margin-left: 1rem;
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+    font-size: $s;
+    background: $primaryBgShading;
+  }
+
+
 
 }
 

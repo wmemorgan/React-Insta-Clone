@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SearchBar from './components/SearchBar'
 import PostContainer from './components/PostContainer'
-import moment from 'moment'
+// import moment from 'moment'
 
 import dummyData from './dummy-data'
 
@@ -9,59 +9,83 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      posts: dummyData,
-      inputValue: ''
+      posts: [],
+      search: ''
+    }
+    console.log(`constructor`)
+  }
+
+  componentDidMount() {
+    console.log(`componentDidMount`)
+    //Initialize localStorage
+    let data
+    if (localStorage.posts) {
+      console.log(`localStorage.posts exists`)
+      data = JSON.parse(localStorage.posts)
+    } else {
+      console.log(`creating localStorage.posts`)
+      localStorage.setItem('posts', JSON.stringify(dummyData))
+      data = JSON.parse(localStorage.posts)
+    }
+
+    console.log(`Initial localStorage.posts from parent:`, data)
+
+    setTimeout(() => {
+      this.setState({ posts: data })
+    }, 0)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // Synchronize state changes with localStorage
+    if(prevState.posts !== this.state.posts) {
+      localStorage.setItem('posts', JSON.stringify(this.state.posts))
+      console.log(`componentDidUpdate localStorage.posts from parent:`, JSON.parse(localStorage.posts))
     }
   }
 
-  // Add new comment
-  commentSubmit = (username, input) => {
+  // Search posts by username
+  searchTask = e => {
+    let searchString = e.target.value.toLowerCase()
+    console.log(`e.target.value: `, searchString)
     this.setState(prevState => {
-      // Create new data array and add the new comment to the comments array
-      let updatedData = prevState.posts.map(post => {
-        if (post.username === username) {
+      let filteredPosts = prevState.posts.map(post => {
+        const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post
+        if (!post.username.toLowerCase().includes(searchString)) {
           return {
-            username: post.username,
-            thumbnailUrl: post.thumbnailUrl,
-            imageUrl: post.imageUrl,
-            likes: post.likes,
-            timestamp: moment(Date.now()).format('LLL'),
-            comments: [...post.comments,
-              { username: post.username, text: input }
-            ]
+            username, thumbnailUrl, imageUrl, likes, timestamp, comments,
+            filtered: true
           }
         } else {
-          return post
+            return {
+              username, thumbnailUrl, imageUrl, likes, timestamp, comments,
+              filtered: false
+            }
         }
       })
 
-      // Replace the previous data with the new data
       return {
-        posts: updatedData,
-        inputValue: ''
+        posts: filteredPosts,
+        search: searchString
       }
-     
-    },
-      () => {
-        console.log(`updated state to:`, this.state)
-      }
-    )
+    })
   }
-  
+
   render() {
+    console.log('App render')
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar search={this.state.search} searchTask={this.searchTask}/>
         {/* Pass post data to container component */}
-        {this.state.posts.map((post, index) =>  (
-          <PostContainer 
-            key={index} 
-            post={post}
-            inputValue={this.state.inputValue}
-            commentInput={this.commentInput}
-            commentSubmit={this.commentSubmit} 
-          />
-        ))}
+        {this.state.posts.length > 0 ? (
+          this.state.posts.map((post, index) => (
+            <PostContainer
+              key={index}
+              id={index}
+              post={post}
+            />
+          ))
+        ) : (<h2>Loading...</h2>)
+        }
       </div>
     );
   }

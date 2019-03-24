@@ -1,4 +1,4 @@
-/* CommentSection component */
+/* Comment component */
 .comment-form {
   width: 90%;
   margin: 20px 0;
@@ -14,13 +14,28 @@
 
 /* Comment component */
 .comment-card {
-  width: 100%;
-  @include flex();
+  width: 90%;
+  @include flex($justify:space-between);
 
-  .comment-text {
-    margin-left: 5px;
-    font-weight: normal;
+  @media #{$phone} {
+    width: 100%;
   }
+
+  .comment-content-wrapper {
+    @include flex();
+    .comment-text {
+      margin: 5px;
+      font-weight: normal;
+    }
+  }
+
+  .comment-delete-wrapper {
+    @include flex($direction:column,$align:flex-end);
+    .fa-ellipsis-v {
+      margin: 5px;
+    }
+  }
+
 }
 
 .elapsed-time {
@@ -30,3 +45,4 @@
   font-size: $xs;
   text-transform: uppercase;
 }
+

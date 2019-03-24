@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import CommentSection from './CommentSection'
 
 const Post = props => {
-  const { post, inputValue, commentInput, commentSubmit } = props
-  const { username, thumbnailUrl, imageUrl, likes, timestamp, comments } = post
+  const { id, post, likes, addLikes } = props
+  const { username, thumbnailUrl, imageUrl, timestamp, comments, filtered } = post
+  const postClassGroup = classNames({
+    "post-container": true,
+    filtered: filtered
+  });
   return (
-    <div className="post-container">
+    <div className={postClassGroup}>
       {/* Post Header */}
       <header className="post-header">
         <div className="avatar-wrapper">
@@ -26,19 +31,17 @@ const Post = props => {
       <footer className="post-footer">
         <div className="post-footer-icons">
           <i className="far fa-comment"></i>
-          <i className="far fa-heart"></i>
+          <i onClick={addLikes} className="far fa-heart"></i>
         </div>
         <div className="likes-count">
           {likes} likes
         </div>
         {/* Pass comment data to comment child component */}
         <CommentSection
+          id={id}
           username={username} 
           comments={comments} 
           timestamp={timestamp}
-          inputValue={inputValue}
-          commentInput={commentInput}
-          commentSubmit={commentSubmit}
         />
       </footer>
     </div>
