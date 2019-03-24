@@ -1,0 +1,56 @@
+/* Post component */
+.post-container {
+  width: 90%;
+  margin: 50px 0;
+  border: 1px solid lightgray;
+
+  @media #{$phone} {
+    margin: 20px 0;
+  }
+
+  .post-header {
+    width: 100%;
+    @include flex($align:center);
+    padding: 10px;
+    color: $headerFontColor;
+    background: $headerBgColor;
+
+    .avatar-wrapper {
+      width: 50px;
+    
+      .avatar {
+        border-radius: 50%;
+      }
+    }
+    
+    .username {
+      margin: 0 5px;
+      font-size: $s;
+      font-weight: bold;
+    }
+  }
+
+  .post-footer {
+    width: 100%;
+    @include flex($direction:column);
+    padding: 10px;
+    font-size: $s;
+    font-weight: bold;
+    color: $footerFontColor;
+    background: $footerBgColor;
+
+    .post-footer-icons {
+      font-size: $ml;
+      
+
+      i:last-child {
+        margin: 0 10px;
+      }
+    }
+
+    & * {
+      margin: 5px 0;
+    }
+  }
+
+}

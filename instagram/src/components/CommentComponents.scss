@@ -1,0 +1,32 @@
+/* CommentSection component */
+.comment-form {
+  width: 90%;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+
+  .comment-input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 0;
+    font-size: $s;
+  }
+}
+
+/* Comment component */
+.comment-card {
+  width: 100%;
+  @include flex();
+
+  .comment-text {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+.elapsed-time {
+  padding: 10px 0;  
+  color: $defaultFontColor;  
+  font-weight: normal;
+  font-size: $xs;
+  text-transform: uppercase;
+}
