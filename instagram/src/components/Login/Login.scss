@@ -1,0 +1,42 @@
+.login-container {
+  width: 90%;
+  max-width: 600px;
+  @include flex($direction:column,$justify:center,$align:center);
+  margin: 50px auto;
+  padding: 50px 0;
+  border: 1px solid $defaultBorderColor;
+  background: $lightText;
+
+  & * {
+    width: 90%;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+
+  .logo-text { 
+    font-family: $logoFont;
+    font-size: $l;
+    text-align: center;
+  }
+
+  .login-form {
+    @include flex($direction:column,$align:center);
+
+    input {
+      padding: 10px;
+      border: 1px solid $defaultBorderColor;
+      background: $primaryBgShading;
+      font-size: $s;
+    }
+
+    .btn-login {
+      padding: 5px 0;
+      border: none;
+      color: $lightText;
+      font-size: $s;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: $primaryColor;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/* Comment component */
+.comment-form {
+  width: 90%;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+
+  .comment-input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 0;
+    font-size: $s;
+  }
+}
+
+/* Comment component */
+.comment-card {
+  width: 90%;
+  @include flex($justify:space-between);
+
+  @media #{$phone} {
+    width: 100%;
+  }
+
+  .comment-content-wrapper {
+    @include flex();
+    .comment-text {
+      margin: 5px;
+      font-weight: normal;
+    }
+  }
+
+  .comment-delete-wrapper {
+    @include flex($direction:column,$align:flex-end);
+    .fa-ellipsis-v {
+      margin: 5px;
+    }
+  }
+
+}
+
+.elapsed-time {
+  padding: 10px 0;  
+  color: $defaultFontColor;  
+  font-weight: normal;
+  font-size: $xs;
+  text-transform: uppercase;
+}
+

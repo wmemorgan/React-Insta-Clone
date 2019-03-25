@@ -1,0 +1,66 @@
+.search-bar-container {
+  width: 100%;
+  @include flex($justify:space-between,$align:center);
+  padding: 20px;
+  color: $headerFontColor;
+  background: $headerBgColor;
+  font-size: $m;
+
+  @media #{$phone} {
+    @include flex($direction:column,$align:center);
+    padding: 10px 0;
+    & * {
+      margin: 5px 0;
+    }
+
+  }
+}
+
+.logo {
+  @include flex($justify:space-evenly,$align:bottom);
+  font-size: $ml;
+
+  .logo-image {
+    padding: 0 20px;
+  }
+
+  .logo-text {
+    font-family: $logoFont;
+    border-left: 1px solid $headerFontColor;
+    padding: 0 20px;
+  }
+}
+
+.search-wrapper {
+  @include flex($justify:center,$align:center);
+  padding: 5px 10px;
+  border: 0.5px solid $defaultBorderColor;
+  color: $defaultFontColor;
+  background: $primaryBgShading;
+  font-size: $xs;
+
+  @media #{$phone} {
+    order: 1;
+  }  
+
+  .search {
+    margin-left: 1rem;
+    border: none;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+    font-size: $s;
+    background: $primaryBgShading;
+  }
+
+
+
+}
+
+.profile {
+  @include flex();
+  flex-wrap: nowrap;
+
+  i {
+    margin: 0 20px;
+    font-size: $ml;
+  }
+}
